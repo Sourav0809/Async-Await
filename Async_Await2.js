@@ -38,13 +38,22 @@ function deletePost() {
 async function updatePost() {
     try {
         await create2ndPost()
-        const responce = await deletePost()
+        let responce = await deletePost()
+        console.log(responce.title)
+        await create3rPost()
+        responce = await deletePost()
+        console.log(responce.title)
+        responce = await deletePost()
+        console.log(responce.title)
+        responce = await deletePost()
         console.log(responce)
+
+
     }
     catch (err) {
-        console.log()
+        console.log(err)
     }
 
 }
 
-updatePost().cat
+updatePost()
